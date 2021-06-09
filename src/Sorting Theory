@@ -1,0 +1,154 @@
+Sorting
+Sorting Algorithms are methods of reorganizing large number of items into
+some specific order such as highest to lowest,or vice-versa,or even in some alphabetical
+order.
+
+there are two types of Sorting
+Internal Sorting:
+ if the input data is such that it can be adjusted in the main memory
+ at once ,it is called internal sorting.
+
+External Sorting
+if the input data is such that it cannot be adjusted in the memory entirely at once ,it needs to be store in a hard disk floppy disk or any other
+storage device.This is called external sorting.
+
+Sorting Algorithms
+
+1)Bubble Sort
+2)Selection Sort
+3)Insertion Sort
+4)Quick Sort
+5)Merge SOrt
+
+Working of bubble sort
+--------------------------
+
+
+
+Working of Insertion sort
+-----------------------
+
+Algorithms :Insertion Sort
+
+1)consider 1st element sorted ,that means
+iterate over the array from 2nd element
+to less than array length.
+int sorted index = 0;
+int unsorted index = 1;
+
+2)iterate over the collection from unsorted to
+less than array length.
+perform following steps-
+3)Select an element ,which is at unsorted index and name it
+next element.
+4)iterate over the collection form unsorted index to 0;and perform
+following steps.
+5)compare then nextElement with element
+as unsorted -1 index.if next element is smaller , swap then otherwise break the loop.
+
+
+Quick Sort
+
+partition (;logical),left and right
+
+pivot value,on this value we will partition given array.
+
+Selection of pivot value:
+->first element,last
+->middle
+->median(first,last ,middle)
+->ramdom value.
+
+->place the print value of ots rigth sorted position.
+  ->this can achive by place all the smaller elements on left side.
+  ->all larger element of right side.
+
+ quicksort is recursive approch
+ divide and Conqure
+
+
+ Algorithm of Quick Sort(arr,upper ,lower):
+1)if(lower>= upper) return;
+2)findung index of sorted pivot value by calling partition algorithm
+  int pivotIndex=parition(arr,lower,upper);
+3)sort the left parttion ,by using quiksort(arr,lower,pivotIndex-1);
+4)sort the right partition , by using quicksort(arr,pivotIndex,upper).
+
+
+Algo of parttion(arr,lower,upper):
+
+1)select the pivot value;
+ ->selecting first element as pivot
+   pivot = arr[lower];
+2)declare and initialize an index down;
+ int down =lower;
+3)declare and initialize an index up ;
+  int up = upper;
+4)repeat until,down is less the up and perform following
+ steps.
+
+ a)while(down<up){
+    while(down<=upper && arr[down] <= pivot){
+        down = down +1;
+    }
+    while(upper>= down && arr[up] > pivot){
+         upper = uper -1;
+    }
+    if(down <up){
+        swap arr[down] with arr[upper];
+    }
+    }
+--> when step 4 exits then up index is the right sorted index for pivott value
+5)place the pivot value at its right sorted place .
+ swap arr[lower]-> with arr[upper];
+
+6)return up.
+
+
+
+Merge Sort
+
+1) Sort while merging
+2)we have to divide the problem into smaller sub problems, until the smallest subproblem.
+ -->
+ lower and high point.
+ divide from mid.
+
+ recursive
+ partition : low to mid and then mid+1 to high.
+
+
+ Algo of  mergeSort(arr, low ,high):
+ 1)if (low>= high )
+   {
+     return;
+    }
+ 2)declare and initialize(calculate) mid.
+    mid = (low + high)/2;
+ 3) solve the left subproblem by calling merge sort on left
+ partition.
+    mergeSort(arr,low ,mid)
+ 4) solve the Right subproblem by calling merge sort on Right
+ partition.
+        mergeSort(arr,mid+1 ,high)
+ 5)merge left and right partition by calling merge Algorithms.
+        merge (arr,low,mid,high);
+
+ algo of merge (arr,low,mid,high):
+ 1)create a new array of high+1;
+    int [] arr = new int[high+1];
+ 2)declare and initaize index for left partition,right partition
+   of new array arr.
+   int i = low;//left partition
+   int j = mid+1//right partition;
+   int k = 0;//arr
+ 3) rrepeat until ,i< = mid and j< = high and perform following steps.
+
+
+
+
+
+
+
+
+
